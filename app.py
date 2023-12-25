@@ -68,8 +68,6 @@ def direct_hit():
     query = request.args.get('query')
     print("slaves:",slaves_ip)
     print("query:",query)
-
-    
     
     # change ssh_key import
     with SSHTunnelForwarder(master_ip, username, ssh_pkey=key, remote_bind_address=(master_ip, 3306)) as tunnel:
